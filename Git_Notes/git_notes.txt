@@ -1,0 +1,14 @@
+see current git configuration
+	git config --global -e
+	
+set global user name
+	git config --global user.name "Joel Godfrey-Smith"
+
+set global user email
+	git config --global user.email "jgodfrey-smith@pm.me"
+
+set default editor
+	git config --global core.editor "code"
+
+set default difference comparing tool
+	git config --global diff.tool gitkraken

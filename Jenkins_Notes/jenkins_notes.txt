@@ -1,0 +1,12 @@
+jenkins linux install steps
+    1. make sure host has git
+    2. make sure host has java jdk
+    3. install maven
+        a. class had me put maven in /usr/local vice location Ubuntu would have installed 
+        b. then had me edit ~/.bashrc to create maven home variable and edit path
+    4. install jenkins
+
+system d commands to stop, start, restart jenkins
+    sudo systemctl stop jenkins
+    sudo systemctl start jenkins
+    sudo systemctl restart jenkins

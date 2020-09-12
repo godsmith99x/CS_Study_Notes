@@ -1,0 +1,67 @@
+Basic commands and format - commandName options inputs	
+	echo - prints contents to standard output
+	cal - prints calendar to standard output
+		cal -y prints calendar for current year
+		cal 1999 prints calendar for year 1999
+	date - prints current date and time stamp
+	clear - clears terminal screen
+		keyboard shortcut - ctrl L
+	history - prints previously used commands in numbered list
+		use !#, where # is a number from the list to run that command
+		!! runs the most recent command in history
+		history -c; history -w clears history and writes changes
+	exit - closes terminal
+		keyboard shortcut - ctrl D
+	which - tells you which folder a command appears in
+	man - linux manual pages
+		man -k allows search 
+
+
+Command Pipelines
+	standard input 0
+	standard output 1
+	standard error 2
+
+	redirection > truncates file and then writes to it 
+				>> does not truncate, just appends new data to destination 
+
+	ex: cat 1> output.txt puts standard output of cat command to a file called output.txt
+	you don't actually have to put 1 because standard output is default for redirection
+
+	date > date.txt #redirects date from std out to file
+	cut < date.txt --delimiter " " --fields 1 #cuts the first column of the date.txt file, each column separated by spaces
+
+	pipe notation | 
+	date | cut --delimiter=" " --field=1 > today.txt #pipes output of date command to input of cut command without having to write a file in between, then redirects to a new file 
+	
+	tee - used to shunt out data of a command pipeline
+	date | tee fulldate.txt | cut --delimiter=" " --field=1
+
+	xargs - lets you pipe into a command that only takes command line arguments, not standard input 
+	if a command gives you an error that says 'missing operand', use xargs
+	date | xargs echo 
+	cat filestodelete.txt | xargs rm #cat reads the data saved in filestodelete.txt and passes each one as an standard input, then xargs converts them to command line arguments for rm, which removes files 
+
+keyboard shortcuts
+	ctrl c - cancels a running command
+	ctrl l - clears terminal screen
+		
+aliases - nick names for pipe commands you have written and saved
+	~/.bash_aliases
+
+
+Examine the shell's path
+	echo $PATH		
+
+Search for apps installed from deb packages
+
+	sudo apt list --installed | grep APPNAME
+	
+	dpkg -l | grep APPNAME
+
+Remove apps installed from deb packages 
+
+	sudo apt remove APPNAME
+	
+	dpkg -r APPNAME
+

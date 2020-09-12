@@ -1,0 +1,237 @@
+// is for a single-line comment
+
+/*
+is for 
+multi-line comments
+*/
+
+Typical beginning of a program:
+/*
+Author:
+Purpose:
+Date:
+License:
+*/
+
+# denotes a preprocessor directive. can be anywhere in source code but usually at top.
+
+#include is typical preprocessor directive to reference C libraries
+
+#ifndef and #define used to protect against multiple inclusions of a header file
+	ifndef stands for if not defined
+	(provide an example)
+	
+* in front of a name indicates that it is a pointer and allows you to follow point to its value, i.e. de-reference it. ex: *aptr
+
+& in front of a name indicates that it is the address of that thing, not its value. ex: &x points to the address of variable x, not its value
+
+.h extension is called a header file
+	executable code does not go into header file
+	usually not logic, just #define directives, structure declarations, typedef statements, functions prototypes
+
+.c extension is a source code file
+	contains executable code
+
+<stdio.h> is the standard C library that provides functions for dealing with inputs and outputs. stdio is short for standard input/output
+
+<stdbool.h> is the standard C library that provides additional boolean functions.
+	allows use of bool varName = true vs _Bool varName = 1
+
+<> these angle brackets mean that it is a standard library
+
+"example.h" double-quotes around a header file means its a user generated library
+	tells the preprocessor to look for it in the current directory
+
+statements in C source code must end in a ;
+
+format specifiers for data types:
+	string %s
+	integer %i, %d, %x, %o
+	unsigned int %u, %x, %o
+	short int %hi, %hx, %ho
+	unsigned short int %hu, %hx, %ho
+	long int %li, %lx, %lo
+	unsigned long int %lu, %lx, %lo
+	long long int %lli, %llx, %llo
+	character %c
+	_Bool %i, %u
+	float %f, %e, %g, %a
+	double %f, %e, %g, %a
+	long double %Lf, %Le, %Lg
+		ex: 
+		int sum = 89
+		printf("The sum is %d\n", sum);
+			printf in this example has two arguments separated by a comma
+			first argument is always a character string
+			second argument is variable that should be mapped to format specifier (i.e., type of data in the variable)
+
+printf(); is a function in <stdio.h> that displays output to terminal
+	can be especially useful for debugging
+
+scanf(); is a function in <stdio.h> that allows user to enter data into the program from the terminal (standard input - stdin) and files. 
+	3 rules:
+	returns the number of items that it successfully reads
+	if scanf() used to read %s, %d, %c, %f, then precede variable name with &
+	if scanf() used to read %s into a character array, then do not use &
+	
+scanf() is like the inverse of print(f)
+
+variable name rules:
+	must begin with a letter or an underscore. ex: _2var
+	no special characters. ex: $
+	no spaces
+	no reserved words. ex: int
+
+key words that represent data types:
+	int - integers 
+		minus sign preceding data type means neg
+		if int value preceded by 0x means hexadecimal 
+	float - numbers in decimal
+		can be scientific notation, ex: 1.7e4
+		ending f explicitly a float constant, ex: 12.5f
+	double - larger numbers in decimal
+		most computers represent double values in 64 bits
+	char - represents a single character such as 'a' '6' or ';'
+		single quotes ' ' denote char
+		char can be assigned numbers from ASCII table but makes code harder to read, i.e. poor style
+		escape characters are special chars that represent actions. ex: backspacing, go to next line, speaker beep, etc. examples of escape chars:
+			char x = '\a'; alert (ANSI C)
+			char x = '\b'; backspace
+			char x = '\f'; form feed
+			char x = '\n'; advance to next line
+			char x = '\r'; carriage return
+			char x = '\t'; horizontal tab
+			char x = '\v'; vertical tab
+			char x = '\\'; backslash (\)
+			char x = '\''; single quote (')
+			char x = '\"'; double quote (")
+			char x = '\?'; question mark (?)
+			char x = '\0oo'; octal value
+			char x = '\xhh'; hexadecimal value
+		examples of declaring a char:
+			char broiled; - just declared
+			broiled = 'T'; - declared and initialized
+	_Bool - 0 or 1, binary choices
+		0 is false
+		1 is true
+	enum - user defined data type with specified valid values
+		list of identifiers in {} that define permissible values. ex: enum primaryColor {red, yellow, blue};
+		must declare variables after enum type is defined. ex: enum primaryColors user1Color, user2Color;
+		compiler treats enums as integer constants under the hood, firs item in the list is 0
+		enums can be assigned values when defined. ex: enum direction {up, down, left = 10, right};
+			up = 0 because first in list
+			down = 1 b/c it's next
+			left = 10 b/c we explicitly assigned
+			right = 11 b/c it follows 10
+	string -
+		double quotes " " denote strings
+
+adjective keywords that can be used in front of data type
+	short
+	long
+		const value of long int is formed by optional L
+		ex: long int numOfPoints = 13107110L;
+	unsigned - only positive values
+	signed - can be negative or positive
+
+declaring a variable - specify the data type followed by the name
+	format: type-specifier variable-name;
+	ex: int x = 21; (this var is declared and initialized)
+
+two ways to pass data into a program:
+	request data from user, entered through terminal
+	command line arguments - supply info to the program at time program is executed
+
+main() function is the entry point for C program
+	when main() is called by runtime sys, two arguments are passed to main()
+		argc - argument count, integer that specifies the number of arguments typed on the command line
+		argv - argument vector, array of character pointers (strings)
+
+operators
+	logical operators - boolean (&&, ||, !), ex: (A&&B), (A||B), !(A&&B)
+	
+	arithmetic operators - math functions (+, -, *, /, %, ++, --)
+	
+	assignment operator - assigns value (=, +=, -=, *=, /=, %=), ex: C = A + B, C += A ≍ C = C + A, etc)
+		<<= left shift and assign, ex: C <<= 2 ≍ C = C << 2
+		>>= right shift and assign, ex: C >>= 2 ≍ C = C >> 2
+		&= bitwise and assign, ex: C &= 2 ≍ C = C & 2
+		^= bitwise exclusive or then assign, ex: C ^= 2 ≍ C = C ^ 2
+		|= bitwise inclusive or then assign, ex: C |= 2 ≍ C = C | 2
+	
+	relational operator - (<, >, <=, >=, ==, !=) compares two operands
+	
+	bitwise operator - (&, |, ^, ~, <<, >>) - test and set individual bits in an integer variable
+		& - binary AND operator copies a bit to the result if it exists in both operands
+		| - binary OR operator copies a bit if it exists in either operand
+		^ - binary XOR operator copies the bit if it is set in operand but not both
+		~ - binary Ones Compliment operator is unary and has effect of flipping bits
+		<< - binary Left Shift operator, left operand's value is moved left by number of bits specified by right operand
+		>> - binary Right Shift operator, left operand's value is moved right by number of bits specified by right operand
+		cast operator - explicit data type conversion, has higher precedence than all arithmetic operators except unary minus and unary plus
+		notation - (type)data
+		ex: (int)21.97 , drops declarations to convert to 21
+		casting should typically done from a more specific type to a less specific type
+
+	sizeof operator - returns number of bytes occupied in memory by a given type
+		evaluated at compile time, not at runtime, unless variable-length array is used in argument
+		arguments can be variable, an array name, name of basic data type, name of derived data type, an expression, or a pointer
+		use sizeof operator to avoid hard-coding sizes of data into your program
+		ex: sizeof(int) - result is number of bytes of variable type int
+
+	asterisk operator - represents a pointer to a variable
+		notation - *variableName
+
+	comparison operator - aka ternary operator - shorthand for if,then statement
+		notation - ?:
+
+operator precedence - determines the grouping of terms in an expression, and thus, how it is evaluated
+	category			operators							associativity
+
+	postfix				() [] -> . ++ --					left to right
+	unary				+ - ! ~ ++ -- (type) * & sizeof		right to left
+	multiplicative		* / %								left to right
+	additive			+ -									left to right
+	shift				<< >>								left to right
+	relational			< <= > >=							left to right
+	equality			== !=								left to right
+	bitwiseAND			&									left to right
+	bitwiseXOR			^									left to right
+	bitwiseOR 			|									left to right
+	logicalAND			&&									left to right
+	logicalOR			||									left to right
+	conditional			?:									right to left
+	assignment			= += -= *= /= %=					right to left
+						>>= <<= &= ^= |=					
+	comma				,									left to right
+
+	associativity - when two operators have same precedence, compiler uses associativity rule as expression is written
+
+
+statements - a complete instruction to the computer. form the basic program steps of C, and most statements are constructed from expressions
+	simple - single line ending in ';'
+	declaration - ex: int Variable; #declaring a variable
+	assignment - ex: Variable = 5;
+	function call - ex: printf("String");
+	structure - ex: while (Variable < 20) Variable = Variable + 1;
+	return - returns data from function, ex: return 0;
+	compound - multiple statements grouped together by braces {}, called a block
+		ex: int index = 0;
+			while (index < 10)
+			{
+				printf("hello");
+				index = index + 1;
+			}
+
+expression - consists of a combination of operators and operands
+	operands - can be constants, variables, or combinations of the two
+	every expression must have a value
+
+type conversion - conversion of data between different types can happen automatically (implicit conversion) or explicitly
+	normally, shouldn't mix types, but it is useful in certain situations
+	when float value is assigned to int variable, the decimal is truncated
+	when int value is assigned to float variable, it's value is converted to float and stored
+	when an int and float are both used as operands, the operation is performed as float 
+	when two int operands are used in an operation, it is an int and decimal is discarded
+
+

@@ -1,0 +1,174 @@
+set - an unordered collection of different well defined objects
+	usually represented by a single capital letter
+	ex: set of all people in class taller than 1.7m
+		H → {Rohan, Julia, Milloux}
+
+element - each object in the set
+	symbol ∈
+	ex: Rohan is an element of set H
+		Rohan ∈ H 
+		
+standard sets:
+	N - set of all natural numbers
+		numbers used for counting and ordering
+		non-negative integers. some definitions begin with 0, some with 1
+		1 → ∞
+	W - set of all whole numbers
+		natural numbers, including 0
+		0 → ∞
+	Z or I - set of all integers
+		number that can be written without a fractional component
+		-∞ → +∞
+	Z+ - set of all positive integers
+		0 → +∞
+	Z- - set of all negative integers
+		-∞ → 0
+	Q - set of all rational numbers
+		numbers that can be expressed as the quotient of two integers (p/q), a numerator p and non-zero denominator q
+	R - set of all real numbers
+		value of a continuous quantity that can represent a distance along a line, where points corresponding to integers are equally spaced
+	C - set of all complex numbers
+		number that can be expressed in form of a +bi, where a and b are real numbers and i represents an imaginary unit, satisfying the equation i^2 = -1
+		
+representing a set:
+	roster method (tabular form) - elements separated by commas enclosed in curly brackets. no elements repeated
+		ex: let V be a set of all vowels in english
+		V = {a, e, i, o, u}
+		let P be a set of all natural numbers less than 10
+		P = {1, 2, 3, 4, 5, 6, 7, 8, 9}
+	
+	set builder notation - elements represented by some common property. they are not listed like in roster
+		notation: A = {x: p(x)} , where : is read as "such that"
+		ex: let V be a set of all vowels in english
+		V = {x: x is an english vowel}
+		let P be a set of all natural numbers less than 10
+		P = {x: x ∈ N and x < 10}
+		
+cardinality - total number of elements in that set
+	notation - |S| , read as cardinality of set S	
+	ex: let V be a set of all vowels in english
+	|V| = 5
+	B = {x: x ∈ W and x < 2} ∴ B = {0, 1}
+	|B| = 2
+	
+types of sets:
+	infinite
+		cardinality is ∞
+	finite
+	empty (null) , { } = ∅
+		cardinality is 0 ∴ a null set is a finite set
+	singleton (unit) set - only one element , {s}
+		ex: B = {x: x ∈ N, 9<x<11} ∴ B = {10}
+		cardinality is always 1
+	equal 
+		elements are exactly the same
+		notation =
+	equivalent 
+		cardinality is the same
+		notation ~
+	disjointed
+		no common elements
+	overlapping
+		at least one common element
+	subset
+		X is a subset of Y if every element of X is an element of Y
+		notation X ⊂ Y , read X is a subset of Y
+		notation X ⊆ Y , read X is a subset of or equal to Y
+		null ({ }) is a subset of every set 
+		every set is a subset of itself
+		equal sets are subsets of each other
+	proper subset
+		cardinality of subset is less than cardinality of set
+	super set
+		opposite of proper subset; i.e. the sets are not equal and the super set contains the whole subset plus additional elements
+	power set
+		set of all the subsets including the null set
+		notation - P(A), where A is a set
+		ex: for A = {a, b}
+		P(A) = { {}, {a}, {b}, {a, b} }
+		|A| = 2 , |P(A)| = 4 ∴ if |A| is n, |P(A)| = 2^n
+		power set of a null set is still just a null set
+	universal set
+		in a particular problem, a set is universal if all the other sets in that problem are subsets of it
+
+
+
+relationship between elements and subsets
+	if 	a set has n elements, it will have 2^n subsets
+	proper subsets = 2^n - 1 , bc every set is a subset of itself
+	
+union of sets
+	set of elements that belong to the two sets being joined
+	notation A∪B
+	ex: A = {1, 2, 3} , B = {4, 5, 6}	
+	A∪B = {1, 2, 3, 4, 5, 6}
+	properties of union:
+		commutative law - A∪B = B∪A
+		associative law - A∪(B∪C) = (A∪B)∪C
+		identity - A∪∅ = A
+		idempotent law - A∪A = A
+		universal - U∪A = U
+
+intersection of sets
+	set of elements common to both A and B
+	notation A∩B
+	ex: A = {1, 5, 6} , B = {2, 5, 6, 8}
+	A∩B = {5, 6}
+	properties of intersection
+		commutative law - A∩B = B∩A
+		associative law - A∩(B∩C) = (A∩B)∩C
+		identity - A∩∅ = ∅
+		idempotent law - A∩A = A
+		universal - U∩A = A
+		distributive - A∩(B∪C) = (A∩B) ∪ (A∩C)
+			also - A∪(B∩C) = (A∪B) ∩ (A∪C)
+
+set difference	
+	if A and B are two sets, there difference is given by:
+		A-B , which means elements of A that are not elements of B (unique to A)
+		B-A , which means elements of B that are not elements of A (unique to B)
+
+complement of a set
+	if U is the universal set and A is its subset, then the complement of A is a set of those elements of U which are not in A
+	notation A'
+	A' = U-A 
+	properties of complement sets
+		complement of a universal set is a null set
+		complement of a null set is a universal set
+		the set and its complement are disjoint sets 
+		A∪A' = A'∪A = U universal set
+		A∩A' = ∅ bc they have nothing in common
+		De Morgan's law A∪B = A'∩ B'
+		De Morgan's law (A∩B)' = A'∪B'
+		law of complementation (A')' = A 
+		empty set law ∅' = U 
+		U' = ∅
+
+cartesian (cross) product
+	set of all ordered pairs of all elements of two sets
+	notation AxB
+	ex: A = {1, 2} and B = {3, 4, 5}
+	AxB = {(1,3), (1,4), (1,5), (2,3), (2,4), (2,5)}
+	BxA = {(3,1), (3,2), (4,1), (4,2), (5,1), (5,2)}
+	AxB ≠ BxA bc order matters in ordered pairs
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
