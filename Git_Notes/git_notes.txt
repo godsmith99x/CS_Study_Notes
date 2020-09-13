@@ -12,3 +12,5 @@ set default editor
 
 set default difference comparing tool
 	git config --global diff.tool gitkraken
+
+test
