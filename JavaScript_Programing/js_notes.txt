@@ -1,0 +1,24 @@
+const - keyword for variable that doesn't change value
+    var - keyword for variable, rarely used in functional programing
+    let - keyword for variable, rarely used in functional programing
+
+object literal - complex data structure,  typically used to make a record of related values
+    ex:
+
+  const meal = {
+    description: 'Breakfast',
+    calories: 180,
+    date: new Date(2020, 0, 1),
+    };
+
+    console.log(meal.date.toString());
+    console.log(meal.calories);
+
+array data structure
+    const meal = [
+        {description: 'Breakfast', calories: 180, date: new Date(2020, 0, 1)},
+        {description: 'Snack', calories: 265, date: new Date(2020, 0, 1)},
+    ];
+
+    console.log(meal.date.toString());
+    console.log(meal.calories);
