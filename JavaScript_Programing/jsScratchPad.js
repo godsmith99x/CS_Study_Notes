@@ -1,7 +1,7 @@
 
-const grade1 = 50.0  Math.random() * 50.0;
-const grade2 = 50.0  Math.random() * 50.0;
-const grade3 = 50.0  Math.random() * 50.0;
+const grade1 = 50 + Math.random() * 50.0;
+const grade2 = 50 + Math.random() * 50.0;
+const grade3 = 50 + Math.random() * 50.0;
 
 console.log(grade1, letterGrade(grade1));
 
