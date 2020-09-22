@@ -1,20 +1,16 @@
 
-const grade1 = 50 + Math.random() * 50.0;
-const grade2 = 50 + Math.random() * 50.0;
-const grade3 = 50 + Math.random() * 50.0;
+const meal = {
+    id: 1,
+    description: 'Breakfast',
+};
 
-console.log(grade1, letterGrade(grade1));
+const updateMeal = {
+    //... before name means to inject data into new item but if any of the fields match, those in the new item take precedence 
+    ...meal,
+    //injects a calories field in meal object literal
+    calories: 600,
+    //takes all data from meal object literal but uses this description instead
+    description: 'Brunch',
+};
 
-function letterGrade(grade) {
-    if (grade >= 90) {
-        return 'A';
-    } else if (grade >= 80) {
-        return 'B';
-    } else if (grade >= 70) {
-        return 'C';
-    } else if (grade >= 60) {
-        return 'D';
-    } else {
-        return 'F';
-    }
-}
+console.log(meal, updateMeal);
