@@ -1,9 +1,20 @@
-const meals = [
-    {description: 'Breakfast', calories: 180, date: new Date(2020, 0, 1)},
-    {description: 'Snack', calories: 265, date: new Date(2020, 0, 1)},
-];
 
+const grade1 = 50.0  Math.random() * 50.0;
+const grade2 = 50.0  Math.random() * 50.0;
+const grade3 = 50.0  Math.random() * 50.0;
 
-const meal1 = meals[0];
+console.log(grade1);
 
-console.log(meal1);
+function letterGrade(grade) {
+    if (grade >= 90) {
+        return 'A';
+    } else if (grade >= 80) {
+        return 'B';
+    } else if (grade >= 70) {
+        return 'C';
+    } else if (grade >= 60) {
+        return 'D';
+    } else {
+        return 'F';
+    }
+}

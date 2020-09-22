@@ -24,3 +24,6 @@ array data structure
     const meal1 = meals[0];
 
     console.log(meal1);
+
+functions
+    
