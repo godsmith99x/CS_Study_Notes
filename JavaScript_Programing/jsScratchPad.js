@@ -3,7 +3,7 @@ const grade1 = 50.0  Math.random() * 50.0;
 const grade2 = 50.0  Math.random() * 50.0;
 const grade3 = 50.0  Math.random() * 50.0;
 
-console.log(grade1);
+console.log(grade1, letterGrade(grade1));
 
 function letterGrade(grade) {
     if (grade >= 90) {
