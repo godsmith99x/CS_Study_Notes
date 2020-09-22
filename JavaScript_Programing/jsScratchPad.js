@@ -29,3 +29,4 @@ console.log(description, calories);
 const {id, ...mealWithoutId} = updateMeal;
 
 console.log(mealWithoutId);
+

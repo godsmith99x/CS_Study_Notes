@@ -132,3 +132,4 @@ array data structure
 
     const {calories, ...mealNewNoCalories} = mealNewCalories;
     console.log(mealNewNoCalories);
+
