@@ -1,4 +1,4 @@
-
+//remove data when copying to new object literal with spread operator
 const meal = {
     id: 1,
     description: 'Breakfast',
@@ -14,3 +14,18 @@ const updateMeal = {
 };
 
 console.log(meal, updateMeal);
+
+//this is a verbose way to just get the two fields we want but more elegant to use destructuring
+//const description = updateMeal.description;
+//const calories = updateMeal.calories;
+
+//example of destructuring
+const {description, calories} = updateMeal;
+
+console.log(description, calories);
+
+//destructuring with rest(...) syntax
+//creates a new object literal with all data from updateMeal without the id field
+const {id, ...mealWithoutId} = updateMeal;
+
+console.log(mealWithoutId);

@@ -1,9 +1,9 @@
-const - keyword for variable that doesn't change value
-    var - keyword for variable, rarely used in functional programing
-    let - keyword for variable, rarely used in functional programing
+//const - keyword for variable that doesn't change value
+    //var - keyword for variable, rarely used in functional programing
+    //let - keyword for variable, rarely used in functional programing
 
-object literal - complex data structure,  typically used to make a record of related values
-    ex:
+//object literal - complex data structure,  typically used to make a record of related values
+    //ex:
 
   const meal = {
     description: 'Breakfast',
@@ -25,31 +25,31 @@ array data structure
 
     console.log(meal1);
 
-functions
-    ex:
+//functions
+    //ex:
 
-const grade1 = 50 + Math.random() * 50.0;
-const grade2 = 50 + Math.random() * 50.0;
-const grade3 = 50 + Math.random() * 50.0;
+    const grade1 = 50 + Math.random() * 50.0;
+    const grade2 = 50 + Math.random() * 50.0;
+    const grade3 = 50 + Math.random() * 50.0;
 
-console.log(grade1, letterGrade(grade1));
+    console.log(grade1, letterGrade(grade1));
 
-function letterGrade(grade) {
-    if (grade >= 90) {
-        return 'A';
-    } else if (grade >= 80) {
-        return 'B';
-    } else if (grade >= 70) {
-        return 'C';
-    } else if (grade >= 60) {
-        return 'D';
-    } else {
-        return 'F';
+    function letterGrade(grade) {
+        if (grade >= 90) {
+            return 'A';
+        } else if (grade >= 80) {
+            return 'B';
+        } else if (grade >= 70) {
+            return 'C';
+        } else if (grade >= 60) {
+            return 'D';
+        } else {
+            return 'F';
+        }
     }
-}
 
-spread syntax   
-
+//spread syntax   
+    //copy and add data to new object literal with spread operator
     const meal = {
         id: 1,
         description: 'Breakfast',
@@ -66,3 +66,69 @@ spread syntax
 
     //logs both data structures to the console
     console.log(meal, updateMeal);
+
+    //remove data when copying to new object literal with spread operator
+    const meal = {
+        id: 1,
+        description: 'Breakfast',
+    };
+
+    const updateMeal = {
+        //... before name means to inject data into new item but if any of the fields match, those in the new item take precedence 
+        ...meal,
+        //injects a calories field in meal object literal
+        calories: 600,
+        //takes all data from meal object literal but uses this description instead
+        description: 'Brunch',
+    };
+
+    console.log(meal, updateMeal);
+
+    //this is a verbose way to just get the two fields we want but more elegant to use destructuring
+    //const description = updateMeal.description;
+    //const calories = updateMeal.calories;
+
+    //example of destructuring
+    const {description, calories} = updateMeal;
+
+    console.log(description, calories);
+
+    //destructuring with rest(...) syntax
+    //creates a new object literal with all data from updateMeal without the id field
+    const {id, ...mealWithoutId} = updateMeal;
+
+    console.log(mealWithoutId);
+
+    //quiz:
+    const meal = {
+    description: 'Dinner',
+    };
+    // 1. In an Immutable way, add a property to the
+    // meal called calories setting it's value to 200,
+    // then log the result to the console
+
+    const updatedMeal = {
+    ...meal,
+    calories: 200,
+    };
+
+    console.log(updatedMeal);
+
+
+    // 2. In an Immutable way, increase the calories 
+    // by 100 and print the result to the console
+
+    const mealNewCalories = {
+    ...updatedMeal,
+    calories: updatedMeal.calories + 100,
+    };
+
+    console.log(mealNewCalories);
+
+
+    // 3. In an Immutable way, remove the calories property and log the result to the console
+
+    // See solution at: https://jsbin.com/sunewil/edit?js,console
+
+    const {calories, ...mealNewNoCalories} = mealNewCalories;
+    console.log(mealNewNoCalories);
