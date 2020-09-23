@@ -14,7 +14,7 @@
     console.log(meal.date.toString());
     console.log(meal.calories);
 
-array data structure
+//array data structure
     const meals = [
         {description: 'Breakfast', calories: 180, date: new Date(2020, 0, 1)},
         {description: 'Snack', calories: 265, date: new Date(2020, 0, 1)},
@@ -57,44 +57,44 @@ array data structure
 
     const updateMeal = {
         //... before name means to inject data into new item but if any of the fields match, those in the new item take precedence 
-        ...meal,
         //injects a calories field in meal object literal
-        calories: 600,
         //takes all data from meal object literal but uses this description instead
+        ...meal,
+        calories: 600,
         description: 'Brunch',
     };
 
     //logs both data structures to the console
     console.log(meal, updateMeal);
 
-    //remove data when copying to new object literal with spread operator
+    //remove data when copying to new object literal with destructuring and rest syntax
     const meal = {
         id: 1,
         description: 'Breakfast',
     };
 
-    const updateMeal = {
+    const updatedMeal = {
         //... before name means to inject data into new item but if any of the fields match, those in the new item take precedence 
-        ...meal,
         //injects a calories field in meal object literal
-        calories: 600,
         //takes all data from meal object literal but uses this description instead
+        ...meal,
+        calories: 600,
         description: 'Brunch',
     };
 
-    console.log(meal, updateMeal);
+    console.log(meal, updatedMeal);
 
     //this is a verbose way to just get the two fields we want but more elegant to use destructuring
-    //const description = updateMeal.description;
-    //const calories = updateMeal.calories;
+    //const description = updatedMeal.description;
+    //const calories = updatedMeal.calories;
 
-    //example of destructuring
-    const {description, calories} = updateMeal;
+    //example of destructuring - makes two new constants each with the values from updatedMeal const
+    const {description, calories} = updatedMeal;
 
     console.log(description, calories);
 
     //destructuring with rest(...) syntax
-    //creates a new object literal with all data from updateMeal without the id field
+    //creates two new constants, an id constant with just the value from that field and a new object literal, called mealWithoutId, with all data from updateMeal without the id field
     const {id, ...mealWithoutId} = updateMeal;
 
     console.log(mealWithoutId);
@@ -152,3 +152,132 @@ array data structure
 
     console.log(meals, updatedMeals);
 
+//using map function on an array
+
+    const numbers = [1, 2, 3];
+
+    function double(number) {
+        return number * 2;
+    }
+
+    const doubledNumbers = numbers.map(double);
+
+    console.log(doubledNumbers);
+
+    //ex:
+    //use map function to update an item in an immutable array
+    const meals = [
+        {id: 1, description: 'Breakfast', calories: 420},
+        {id: 2, description: 'Lunch', calories: 520},
+    ];
+
+    const newMeal = {
+        id: 3,
+        description: 'Snack',
+        calories: 180,
+    };
+
+    //... before meals means copy all the data from meals into new object literal with newMeal info as well
+    const updatedMeals = [...meals, newMeal];
+
+    console.log(meals, updatedMeals);
+
+    //creates a new object literal, called updatedMealsDescription, by iterating over each index in the updatedMeals array and running the updateDescription function at each point
+    const updatedMealsDescription = updatedMeals.map(updateDescription);
+
+
+    //looks at the id of the object literal in the array at each index of a matrix, and if the id is 2, it updates the description and copies it into a new array, called updatedMealsDescription, otherwise it just copies the full object literal, unchanged, into the new array
+    function updateDescription (meal) {
+        if (meal.id === 2) {
+            return {
+                ...meal,
+                description: 'Early Lunch',
+            };
+        }
+        return meal;
+    }
+
+    console.log(updatedMealsDescription);
+
+//using filter function on an array to remove items
+    //use map function to update an item in an immutable array
+    const meals = [
+        {id: 1, description: 'Breakfast', calories: 420},
+        {id: 2, description: 'Lunch', calories: 520},
+    ];
+
+    const newMeal = {
+        id: 3,
+        description: 'Snack',
+        calories: 180,
+    };
+
+    //... before meals means copy all the data from meals into new object literal with newMeal info as well
+    const updatedMeals = [...meals, newMeal];
+
+    console.log(meals, updatedMeals);
+
+    //creates a new object literal, called updatedMealsDescription, by iterating over each index in the updatedMeals array and running the updateDescription function at each point
+    const updatedMealsDescription = updatedMeals.map(updateDescription);
+
+
+    //looks at the id of the object literal in the array at each index of a matrix, and if the id is 2, it updates the description and copies it into a new array, called updatedMealsDescription, otherwise it just copies the full object literal, unchanged, into the new array
+    function updateDescription (meal) {
+        if (meal.id === 2) {
+            return {
+                ...meal,
+                description: 'Early Lunch',
+            };
+        }
+        return meal;
+    }
+
+    console.log(updatedMealsDescription);
+
+    //uses filter function on an array to remove an item
+    //within the filter function, we are calling an anonymous function to return true if we want the item included in the new array, called filtered meals, and false if we don't. we are filtering out id = 1
+    const filteredMeals = updatedMeals.filter(function(meal){
+        return meal.id !== 1;
+    });
+
+    console.log(filteredMeals);
+
+    quiz:
+    // 1. create a constant named friends, 
+    // which is an array that contains 2 
+    // names of your choosing.
+
+    const friends = ['Amanda', 'Jeffrey'];
+
+    // 2. Create a new constant named updatedFriends, 
+    // which includes the friends array values plus 
+    // one additional name
+
+    const updatedFriends = [...friends, 'Nathan'];
+
+    // 3. Create a new constant named friendNameLengths, 
+    // which is based on the array updatedFriends, 
+    // but instead of having the friends names, 
+    // have the array store the length of each persons name.
+
+    const friendNameLengths = updatedFriends.map(nameLength);
+
+    function nameLength(name) {
+    return name.length;
+    }
+
+    // 4. Create a new constant named shorterNamedFriends, 
+    // which will be a list of the friends except the friend with the longest name.
+
+    const maxNameLength = Math.max(...friendNameLengths);
+
+    const shorterNamedFriends = updatedFriends.filter(function(name){
+    return name.length < maxNameLength;  
+    });
+
+    // 5. Print each variable to the console.
+
+    console.log(friends, updatedFriends, friendNameLengths, maxNameLength, shorterNamedFriends);
+
+    // Solution can be seen at: 
+    // https://jsbin.com/nevonet/1/edit?js,console
