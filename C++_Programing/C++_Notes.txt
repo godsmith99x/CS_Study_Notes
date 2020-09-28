@@ -4,7 +4,7 @@ Example: std::cout << "Hello World!\n";
 	
 	<< is an operator that comes right after it.
 
-	"Hello World!\n" is what’s being outputted here. You need double quotes 		around text. The \n is a special character that indicates a new line.
+	"Hello World!\n" is what’s being outputted here. You need double quotes around text. The \n is a special character that indicates a new line.
 
-	; is a punctuation that tells the computer that you are at the end of a 		statement. It is similar to a period in a sentence.
+	; is a punctuation that tells the computer that you are at the end of a statement. It is similar to a period in a sentence.
 
