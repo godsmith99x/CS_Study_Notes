@@ -1,3 +1,6 @@
+c++ keywords, ref: https://en.cppreference.com/w/cpp/keyword
+
+
 std::cout is the “character output stream”. It is pronounced “see-out”.
 	
 << is an operator that comes right after it.
