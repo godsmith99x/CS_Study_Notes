@@ -11,14 +11,14 @@ License: n/a
 
 int main(void)
 {
-    int integerVar = 100;
+    int intergerVar = 100;
     float floatingVar = 331.79;
     double doubleVar = 8.44e+11;
     char charVar = 'W';
 
     _Bool boolVar = 0;
 
-    printf("intergerVar = %i floatingVar = %f\n", integerVar, floatingVar);
+    printf("intergerVar = %i floatingVar = %f\n", intergerVar, floatingVar);
     printf("floatVar = %f\n", floatingVar);
     printf("doubleVar = %e\n", doubleVar);
     printf("doubleVar = %g\n", doubleVar);
