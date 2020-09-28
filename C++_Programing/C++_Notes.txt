@@ -1,10 +1,29 @@
-Example: std::cout << "Hello World!\n";
-
-	std::cout is the “character output stream”. It is pronounced “see-out”.
+std::cout is the “character output stream”. It is pronounced “see-out”.
 	
-	<< is an operator that comes right after it.
+<< is an operator that comes right after it.
 
-	"Hello World!\n" is what’s being outputted here. You need double quotes around text. The \n is a special character that indicates a new line.
+"Hello World!\n" is what’s being outputted here. You need double quotes around text. The \n is a special character that indicates a new line.
 
-	; is a punctuation that tells the computer that you are at the end of a statement. It is similar to a period in a sentence.
+; is a punctuation that tells the computer that you are at the end of a statement. It is similar to a period in a sentence.
+
+ex:
+	#include <iostream>
+
+
+	int main() {
+		
+		int favNum;
+		
+		std::cout << "Enter your favorite number between 0-100: " << std::endl;
+
+		//takes input from user through the terminal
+		std::cin >> favNum; 
+
+		std::cout << "Wow! That's my favorite number too!" << std::endl;
+
+		std::cout << "No, " << favNum << " really is my favorite." << std::endl;
+
+		return 0;
+	}
+
 
