@@ -161,5 +161,10 @@ c++ primitive data types
 
 	boolean
 		
-
+sizeof operator
+	returns size of type or variable in bytes
+	required include files <climits> and <cfloat>
+	
+	ex:
+	
 	
