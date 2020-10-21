@@ -218,4 +218,282 @@ sizeof operator
 
 		return 0;
 	}
+
+conditional statements - if then, else then format
+
+	ex:
+	#include <iostream>
+
+	int main() {
 	
+	double ph = 4.6;
+	
+	// Write the if, else if, else here:
+	
+	if (ph > 7) {
+		std::cout << "Basic\n";
+	} else if (ph < 7) {
+		std::cout << "Acidic\n";
+	} else {
+		std::cout << "Neutral";
+	}
+	
+	}
+
+switch statement - simplified if/else if format
+
+	ex:
+	#include <iostream>
+
+	int main() {
+	
+	int number = 9;
+	
+	switch(number) {
+		
+		case 1 :
+			std::cout << "Bulbusaur\n";
+			break;
+		case 2 :
+			std::cout << "Ivysaur\n";
+			break;
+		case 3 :
+			std::cout << "Venusaur\n";
+			break;
+		case 4 :
+			std::cout << "Charmander\n";
+			break;
+		case 5 :
+			std::cout << "Charmeleon\n";
+			break;
+		case 6 :
+			std::cout << "Charizard\n";
+			break;
+		case 7 :
+			std::cout << "Squirtle\n";
+			break;
+		case 8 :
+			std::cout << "Wartortle\n";
+			break;
+		case 9 :
+			std::cout << "Blastoise\n";
+			break;
+		default :
+			std::cout << "Unknown\n";
+			break;
+	
+	}
+	
+	}
+	
+magic 8-ball quiz
+	#include <iostream>
+	#include <cstdlib>
+	using namespace std;
+
+	//function to avoid having to type brand name many times
+	void brandName () {
+	cout << "MAGIC 8-BALL: ";
+	} 
+
+	int main () {
+
+	//seed for random number
+	srand(time(NULL));
+	
+	//generates a random number from 0-9
+	int answer = rand() % 10;
+	
+	
+	switch (answer) {
+		case 0 :
+		brandName () ; cout << "It is certain." << endl;
+		break;
+		case 1 :
+		brandName () ; cout << "It is certain." << endl;
+		break;
+		case 2 :
+		brandName () ; cout << "Meh." << endl;
+		break;
+		case 3 :
+		brandName () ; cout << "How the fuck would I know." << endl;
+		break;
+		case 4 :
+		brandName () ; cout << "Yeah, but it's going to hurt like a bitch." << endl;
+		break;
+		case 5 :
+		brandName () ; cout << "No way." << endl;
+		break;
+		case 6 :
+		brandName () ; cout << "You'll probably get Covid first." << endl;
+		break;
+		case 7 :
+		brandName () ; cout << "Suck my dick." << endl;
+		break;
+		case 8 :
+		brandName () ; cout << "Lick my labia." << endl;
+		break;
+		case 9 :
+		brandName () ; cout << "Go fuck yourself." << endl;
+		break;
+		default :
+		brandName () ; cout << "Very doubtful." << endl;
+		break;
+	}
+
+	}
+
+hogwarts sorting hat quiz
+	#include <iostream>
+	#include <string>
+	using namespace std;
+
+	int main () {
+
+	int gryffindor = 0; 
+	int hufflepuff = 0;
+	int ravenclaw = 0;
+	int slytherin = 0;
+
+	int answer1 = 0;
+	int answer2 = 0;
+	int answer3 = 0;
+	int answer4 = 0;
+
+	cout << "The Sorting Hat Quiz!" << endl; 
+	cout << endl;
+
+	cout << "Q1) When I'm dead, I want people to remember me as: " << endl;
+	cout << endl; 
+	cout << "  1) The Good" << endl;
+	cout << "  2) The Good" << endl;
+	cout << "  3) The Good" << endl;
+	cout << "  4) The Good" << endl;
+
+	cin >> answer1;
+	cout << endl;
+
+	switch (answer1) {
+		case 1 :
+		hufflepuff++;
+		break;
+		case 2 :
+		slytherin++;
+		break;
+		case 3 :
+		ravenclaw++;
+		break;
+		case 4 :
+		gryffindor++;
+		break;
+		default :
+		cout << "Invalid input";
+	}
+
+	cout << endl;
+
+	cout << "Q2) Dawn or Dusk? " << endl;
+	cout << endl; 
+	cout << "  1) Dawn" << endl;
+	cout << "  2) Dusk" << endl;
+	
+	cin >> answer2;
+	cout << endl;
+
+	switch (answer2) {
+		case 1 :
+		ravenclaw++;
+		gryffindor++;
+		break;
+		case 2 :
+		slytherin++;
+		hufflepuff++;
+		break;
+		default :
+		cout << "Invalid input";
+	}
+
+	cout << endl;
+
+	cout << "Q3) Which kind of instrument most pleases your ear? " << endl;
+	cout << endl; 
+	cout << "  1) The violin" << endl;
+	cout << "  2) The trumpet" << endl;
+	cout << "  3) The piano" << endl;
+	cout << "  4) The drum" << endl;
+
+	cin >> answer3;
+	cout << endl;
+
+	switch (answer3) {
+		case 1 :
+		slytherin++;
+		break;
+		case 2 :
+		hufflepuff++;
+		break;
+		case 3 :
+		ravenclaw++;
+		break;
+		case 4 :
+		gryffindor++;
+		break;
+		default :
+		cout << "Invalid input";
+	}
+
+	cout << endl;
+
+	cout << "Q4) Which road tempts you the most? " << endl;
+	cout << endl; 
+	cout << "  1) The wide, sunny, grassy lane" << endl;
+	cout << "  2) The narrow, dark, latern-lit alley" << endl;
+	cout << "  3) The twisting, leaf-strewn path through woods" << endl;
+	cout << "  4) The cobbled street lined (ancient buildings)" << endl;
+
+	cin >> answer4;
+	cout << endl;
+
+	switch (answer4) {
+		case 1 :
+		hufflepuff++;
+		break;
+		case 2 :
+		slytherin++;
+		break;
+		case 3 :
+		gryffindor++;
+		break;
+		case 4 :
+		ravenclaw++;
+		break;
+		default :
+		cout << "Invalid input";
+	}
+
+	int max = 0;
+
+	std::string house = " ";
+
+	if (gryffindor > max) {
+		max = gryffindor;
+		house = "Gryffindor";
+	} else if (hufflepuff > max) {
+		max = hufflepuff;
+		house = "Hufflepuff";
+	} else if (ravenclaw > max) {
+		max = ravenclaw;
+		house = "Ravenclaw";
+	} else if (slytherin > max) {
+		max = slytherin;
+		house = "Slytherin";
+	} else {
+		cout << "Error";
+	}
+
+	cout << endl;
+
+	std::cout << house << "!\n";
+	
+
+	}
