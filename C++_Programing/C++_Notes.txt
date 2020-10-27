@@ -517,3 +517,36 @@ for loop - FizzBuzz Quiz
 	}
 
 	}
+
+for loop - WhaleSpeak Quiz
+
+	#include <iostream>
+	#include <vector>
+	#include <string>
+
+	using namespace std;
+
+	int main () {
+
+	string input = "turpentine and turtles";
+
+	vector<char> vowels {'a', 'e', 'i', 'o', 'u'};
+
+	vector<char> results {};
+
+	for (int i = 0; i < input.size(); i++) {
+		for (int j = 0; j < vowels.size(); j++) {
+		if (input.at(i) == vowels.at(j)) {
+			results.push_back(input.at(i));
+			if (input.at(i) == 'e' || input.at(i) == 'u') {
+			results.push_back(input.at(i));
+			}
+		}
+		}
+	}
+	
+	for (int k = 0; k < results.size(); k++) {
+		cout << results.at(k);
+	}
+	cout << endl;
+	}
