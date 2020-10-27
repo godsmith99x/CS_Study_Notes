@@ -22,9 +22,7 @@ int main () {
   }
 
   for (int i = 0; i < results.size(); i++) {
-    if (results.at (i) == 'e' || results.at (i) == 'u') {
-      results.push_back(results.at(i));
-    }
+    
     cout << results.at(i);
   }
 }
