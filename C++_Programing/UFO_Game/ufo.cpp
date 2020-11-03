@@ -24,11 +24,11 @@ int main()
     std::cout << "Please enter your guess: ";
     std::cin >> letter;
 
-    for (auto& eachLetter : codeword)
+    for (int i = 0; i < codeword.length(); i++)
     {
-      if (letter == eachLetter)
+      if (letter == codeword[i])
       {
-        answer[eachLetter] = letter;
+        answer[i] = letter;
         guess = true;
       }
     }
