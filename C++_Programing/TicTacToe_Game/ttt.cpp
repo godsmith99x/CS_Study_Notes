@@ -2,43 +2,35 @@
 #include <vector>
 #include "ttt_functions.hpp"
 
-using namespace std;
+
+const vector<vector<char>> startingGameBoard 
+{
+    {'1', '2', '3'},
+    {'4', '5', '6'},
+    {'7', '8', '9'}
+};
+
+vector<vector<char>> playingGameBoard
+{
+    startingGameBoard
+};
+
+vector<int> playerMoves {};
+
+    
+bool gameInPlay {true};
+
 
 int main()
 {
 
-    const vector<vector<char>> startingGameBoard 
-    {
-        {'1', '2', '3'},
-        {'4', '5', '6'},
-        {'7', '8', '9'}
-    };
-
-    vector<vector<char>> playingGameBoard
-    {
-        {'1', '2', '3'},
-        {'4', '5', '6'},
-        {'7', '8', '9'}
-    };
-
-    vector<vector<char>> player1
-    {
-        {'1', '2', '3'},
-        {'4', '5', '6'},
-        {'7', '8', '9'}
-    };
-
-    vector<vector<char>> player2
-    {
-        {'1', '2', '3'},
-        {'4', '5', '6'},
-        {'7', '8', '9'}
-    };
-
-    bool gameInPlay {true};
+    greeting();
 
     while(gameInPlay == true)
     {
+        displayBoard(playingGameBoard);
+
+        player1Selection(playerMoves, playingGameBoard);
 
         gameInPlay = false;
     }
