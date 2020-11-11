@@ -16,7 +16,7 @@ int whichPlayersTurn {1};
 
 int playersChoice {0};
 
-vector<int> previousMoves {0};
+vector<int> previousMoves {};
 
 
 void greeting()
@@ -111,7 +111,7 @@ bool choiceAlreadyTaken()
 
 void saveChoiceUpdateBoard()
 {
-  previousMoves.push_back(playersChoice);
+  //previousMoves.push_back(playersChoice);
 
   switch (playersChoice)
   {
@@ -157,7 +157,70 @@ void saveChoiceUpdateBoard()
   }
 }
 
+bool endGameCheck()
+{
+  boardFullCheck();
 
+  winningCombinations();
+
+  if (winningCombinations())
+  {
+    cout << "That's a win!" << endl;
+    return true;
+  } else if (boardFullCheck())
+  {
+    cout << "It's a tie!" << endl;
+    return true;
+  } else
+  {
+    return false;
+  }
+}
+
+bool boardFullCheck()
+{
+  const int fullBoardValue {1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9};
+  int currentBoardValue {0};
+
+  for (auto num : previousMoves)
+  {
+    currentBoardValue += previousMoves.at(num);
+  }
+
+  if (currentBoardValue == fullBoardValue)
+  {
+    return true;
+  } else if (currentBoardValue < fullBoardValue)
+  {
+    return false;
+  } else
+  {
+    cout << "Error in storing previous moves." << endl;
+    return true;
+  } 
+}
+
+bool winningCombinations()
+{
+  if (board.at(0).at(0) == board.at(0).at(1))
+  {
+    return true;
+  } else
+  {
+    return false;
+  }
+}
+
+void resetGame()
+{
+  board = startingGameBoard;
+
+  whichPlayersTurn = 1;
+
+  playersChoice = 0;
+
+  previousMoves = {0};
+}
 
 
 

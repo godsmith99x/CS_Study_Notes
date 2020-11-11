@@ -15,3 +15,11 @@ bool choiceAlreadyTaken();
 
 void saveChoiceUpdateBoard();
 
+bool endGameCheck();
+
+bool boardFullCheck();
+
+bool winningCombinations();
+
+void resetGame();
+

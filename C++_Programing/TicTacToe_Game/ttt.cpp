@@ -12,13 +12,19 @@ int main()
 
     greeting();
 
-    drawBoard();
+    while(!endGameCheck())
+    {
+        drawBoard();
 
-    pickSquare();
+        pickSquare();
 
+        drawBoard();
+
+        system("clear");
+
+        endGameCheck();
+    }
     
-
-
     
     return 0;
 }
