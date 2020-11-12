@@ -1,22 +1,8 @@
 #include <iostream>
 #include <vector>
-#include <algorithm>
 #include "ttt_functions.hpp"
 
-const vector<vector<char>> startingGameBoard 
-{
-    {'1', '2', '3'},
-    {'4', '5', '6'},
-    {'7', '8', '9'}
-};
 
-vector<vector<char>> board {startingGameBoard};
-
-int whichPlayersTurn {1};
-
-int playersChoice {0};
-
-vector<int> previousMoves {};
 
 
 void greeting()
@@ -27,7 +13,7 @@ void greeting()
 }
 
 
-void drawBoard() 
+void drawBoard(const vector<vector<char>> &board) 
 {
 
   cout << "     |     |      " << endl;
@@ -49,37 +35,37 @@ void drawBoard()
     
 }
 
-void pickSquare() 
+int pickSquare(int &whoseTurn, int &choice, vector<int> &pastChoices, vector<vector<char>> &board) 
 {
-  cout << "Player " << whichPlayersTurn << ", pick your square (1-9): ";
-  cin >> playersChoice;
+  cout << "Player " << whoseTurn << ", pick your square (1-9): ";
+  cin >> choice;
   cout << endl;
 
-  choiceInRange();
+  //choiceInRange();
 
-  choiceAlreadyTaken();
+  //choiceAlreadyTaken();
 
-  if (!choiceInRange() || choiceAlreadyTaken())
+  if (!choiceInRange(choice) || choiceAlreadyTaken(choice, pastChoices))
   {
     pickSquare();
   }
 
-  saveChoiceUpdateBoard();
+  saveChoiceUpdateBoard(choice, pastChoices, board);
 
-  if (whichPlayersTurn == 1)
+  if (whoseTurn == 1)
   {
-    whichPlayersTurn = 2;
+    return whoseTurn = 2;
   } else
   {
-    whichPlayersTurn = 1;
+    return whoseTurn = 1;
   }
   
 }
 
 
-bool choiceInRange()
+bool choiceInRange(const int &choice)
 {
-  if(playersChoice >= 1 && playersChoice <= 9)
+  if(choice >= 1 && choice <= 9)
   {
     return true;
   } else
@@ -88,19 +74,19 @@ bool choiceInRange()
   }
 } 
 
-bool choiceAlreadyTaken()
+bool choiceAlreadyTaken(const int &choice, const vector<int> &pastChoices)
 {
-  int countPreviousMoves {0};
+  int countPastChoices {0};
 
-  for (auto num : previousMoves)
+  for (auto num : pastChoices)
   {
-    if (playersChoice == previousMoves.at(num))
+    if (choice == pastChoices.at(num))
     {
-      ++countPreviousMoves;
+      ++countPastChoices;
     }
   }
 
-  if (countPreviousMoves > 0)
+  if (countPastChoices > 0)
   {
     return true;
   } else
@@ -109,46 +95,46 @@ bool choiceAlreadyTaken()
   }
 } 
 
-void saveChoiceUpdateBoard()
+void saveChoiceUpdateBoard(int &whoseTurn, int &choice, vector<int> &pastChoices, vector<vector<char>> &board)
 {
-  //previousMoves.push_back(playersChoice);
+  pastChoices.push_back(choice);
 
-  switch (playersChoice)
+  switch (choice)
   {
   case 1:
-    board.at(0).at(0) = (whichPlayersTurn == 1) ? 'X' : 'O';
+    return board.at(0).at(0) = (whoseTurn == 1) ? 'X' : 'O';
     break;
 
   case 2:
-    board.at(0).at(1) = (whichPlayersTurn == 1) ? 'X' : 'O';
+    return board.at(0).at(1) = (whoseTurn == 1) ? 'X' : 'O';
     break;
 
   case 3:
-    board.at(0).at(2) = (whichPlayersTurn == 1) ? 'X' : 'O';
+    return board.at(0).at(2) = (whoseTurn == 1) ? 'X' : 'O';
     break;
 
   case 4:
-    board.at(1).at(0) = (whichPlayersTurn == 1) ? 'X' : 'O';
+    return board.at(1).at(0) = (whoseTurn == 1) ? 'X' : 'O';
     break;
 
   case 5:
-    board.at(1).at(1) = (whichPlayersTurn == 1) ? 'X' : 'O';
+    return board.at(1).at(1) = (whoseTurn == 1) ? 'X' : 'O';
     break;
 
   case 6:
-    board.at(1).at(2) = (whichPlayersTurn == 1) ? 'X' : 'O';
+    return board.at(1).at(2) = (whoseTurn == 1) ? 'X' : 'O';
     break;
 
   case 7:
-    board.at(2).at(0) = (whichPlayersTurn == 1) ? 'X' : 'O';
+    return board.at(2).at(0) = (whoseTurn == 1) ? 'X' : 'O';
     break;
 
   case 8:
-    board.at(2).at(1) = (whichPlayersTurn == 1) ? 'X' : 'O';
+    return board.at(2).at(1) = (whoseTurn == 1) ? 'X' : 'O';
     break;
 
   case 9:
-    board.at(2).at(2) = (whichPlayersTurn == 1) ? 'X' : 'O';
+    return board.at(2).at(2) = (whichPlayersTurn == 1) ? 'X' : 'O';
     break;
   
   default:
@@ -159,9 +145,9 @@ void saveChoiceUpdateBoard()
 
 bool endGameCheck()
 {
-  boardFullCheck();
+  //boardFullCheck();
 
-  winningCombinations();
+  //winningCombinations();
 
   if (winningCombinations())
   {

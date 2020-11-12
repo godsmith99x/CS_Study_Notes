@@ -5,13 +5,13 @@ using namespace std;
 
 void greeting();
 
-void drawBoard();
+void drawBoard(const vector<vector<char>> &v);
 
-void pickSquare();
+int pickSquare(int &whoseTurn, int &makeChoice, vector<int> &pastChoices);
 
-bool choiceInRange();
+bool choiceInRange(const int &choice);
 
-bool choiceAlreadyTaken();
+bool choiceAlreadyTaken(const int &choice, const vector<int> &moves);
 
 void saveChoiceUpdateBoard();
 
