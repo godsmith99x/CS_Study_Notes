@@ -52,6 +52,8 @@ int main()
         fullBoardCheck(pastChoices, endGame);
         
         changePlayers(whoseTurn);
+
+        resetChoice(choice);
     }
 
     playAgain(startingGameBoard, board, whoseTurn, choice, pastChoices, endGame);

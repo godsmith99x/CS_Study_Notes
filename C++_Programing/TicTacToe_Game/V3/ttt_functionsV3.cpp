@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include "ttt_functionsV2.hpp"
+#include "ttt_functionsV3.hpp"
 
 
 
@@ -51,6 +51,7 @@ bool choiceInRange(const int &choice)
   } else
   {
     return false;
+    cout << "Pick a selection between 1-9.";
   }
 } 
 
@@ -64,8 +65,9 @@ bool choiceTaken(const int &choice, const vector<int> &pastChoices)
             return true;
         }
         
-    return false;
+    //return false;
     }
+    return false;
 }
 
 //Adds players current choice to past choices 
@@ -122,19 +124,19 @@ void updateBoard(const int &whoseTurn, const int &choice, vector<vector<char>> &
 }
 
 //Alternates between Player 1 and Player 2
-int changePlayers(int &whoseTurn)
+void changePlayers(int &whoseTurn)
 {
     if (whoseTurn == 1)
   {
-    return whoseTurn = 2;
+    whoseTurn = 2;
   } else
   {
-    return whoseTurn = 1;
+    whoseTurn = 1;
   }
 } 
 
 //Checks for winning combinations
-bool winningComboCheck(const int &whoseTurn, const vector<vector<char>> &board, bool &endGame)
+bool winningComboCheck(const int &whoseTurn, const vector<vector<char>> &board)
 {
     //rows
     if (((board.at(0).at(0) == board.at(0).at(1)) && (board.at(0).at(1) == board.at(0).at(2))) ||
@@ -142,7 +144,8 @@ bool winningComboCheck(const int &whoseTurn, const vector<vector<char>> &board, 
         ((board.at(2).at(0) == board.at(2).at(1)) && (board.at(2).at(1) == board.at(2).at(2))))
     {
         cout << "Player " << whoseTurn << " wins!" << endl;
-        return endGame = true;
+        cout << endl;
+        return true;
     }
 
     //columns
@@ -151,7 +154,8 @@ bool winningComboCheck(const int &whoseTurn, const vector<vector<char>> &board, 
         ((board.at(0).at(2) == board.at(1).at(2)) && (board.at(1).at(2) == board.at(2).at(2))))
     {
         cout << "Player " << whoseTurn << " wins!" << endl;
-        return endGame = true;
+        cout << endl;
+        return true;
     }
 
     //diagonals
@@ -159,14 +163,15 @@ bool winningComboCheck(const int &whoseTurn, const vector<vector<char>> &board, 
         ((board.at(0).at(2) == board.at(1).at(1)) && (board.at(1).at(1) == board.at(2).at(0))))
     {
         cout << "Player " << whoseTurn << " wins!" << endl;
-        return endGame = true;
+        cout << endl;
+        return true;
     }
 
-    return endGame = false;
+    return false;
 }
 
 //Checks if all squares have been taken
-bool fullBoardCheck(const vector<int> &pastChoices, bool &endGame)
+bool fullBoardCheck(const vector<int> &pastChoices)
 {
   const int fullBoardValue {1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9};
   int currentBoardValue {0};
@@ -179,51 +184,41 @@ bool fullBoardCheck(const vector<int> &pastChoices, bool &endGame)
   if (currentBoardValue == fullBoardValue)
   {
     cout << "Game Over. It's a Tie." << endl;
-    return endGame = true;
+    return true;
   } else if (currentBoardValue < fullBoardValue)
   {
-    return endGame = false;
+    return false;
   } else
   {
     cout << "Error in storing previous moves." << endl;
-    return endGame = true;
+    return true;
   } 
 }
 
 //Checks if players want to play again
-bool playAgain(const vector<vector<char>> startingGameBoard, vector<vector<char>> board, int whoseTurn, int choice, vector<int> pastChoices, bool endGame)
+bool playAgain()
 {
     char yesNo {'x'};
     cout << "Would you like to play again? (y/n): ";
     cin >> yesNo;
+    cout << endl;
 
     if (yesNo == 'y' || yesNo == 'Y')
     {
         cout << "Sweet! Let's play again." << endl;
-        resetGame(startingGameBoard, board, whoseTurn, choice, pastChoices, endGame);
+        cout << endl;
+        return true;
     } else if (yesNo == 'n' || yesNo == 'N')
     {
         cout << "Too bad. See you next time!" << endl;
-        return endGame = true;
+        cout << endl;
+        return false;
     } else
     {
         cout << "That's an invalid selection. Select either 'y' for yes or 'n' for no." << endl;
-        playAgain(startingGameBoard, board, whoseTurn, choice, pastChoices, endGame);
+        cout << endl;
+        playAgain();
     } 
-}
-
-//Resets game variables
-void resetGame(const vector<vector<char>> startingGameBoard, vector<vector<char>> board, int whoseTurn, int choice, vector<int> pastChoices, bool endGame)
-{
-  board = startingGameBoard;
-
-  whoseTurn = 1;
-
-  choice = 0;
-
-  pastChoices = {};
-
-  endGame = false;
 }
 
 //Print out elements in a vector
@@ -237,4 +232,22 @@ void printPastChoices(vector<int> pastChoices)
   }
 
   cout << endl;
+  cout << endl;
+}
+
+//Resets choice
+void resetChoice(int choice)
+{
+  choice = 0;
+}
+
+bool quitGame(int choice)
+{
+  if(choice == 'q' || choice == 'Q')
+  {
+    return true;
+  } else
+  {
+    return false;
+  }
 }

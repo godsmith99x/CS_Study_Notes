@@ -13,3 +13,4 @@ bool fullBoardCheck(const vector<int> &pastChoices, bool &endGame);
 bool playAgain(const vector<vector<char>> startingGameBoard, vector<vector<char>> board, int whoseTurn, int choice, vector<int> pastChoices, bool endGame);
 void resetGame(const vector<vector<char>> startingGameBoard, vector<vector<char>> board, int whoseTurn, int choice, vector<int> pastChoices, bool endGame);
 void printPastChoices(vector<int> pastChoices);
+void resetChoice(int choice);
