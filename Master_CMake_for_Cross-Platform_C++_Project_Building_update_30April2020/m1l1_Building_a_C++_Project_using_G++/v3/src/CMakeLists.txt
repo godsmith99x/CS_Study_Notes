@@ -6,3 +6,6 @@ add_subdirectory(math)
 
 add_subdirectory(printing)
 
+target_include_directories(math PUBLIC math)
+
+target_include_directories(printing PUBLIC printing)

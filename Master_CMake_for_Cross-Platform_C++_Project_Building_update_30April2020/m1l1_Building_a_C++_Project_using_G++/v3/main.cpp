@@ -1,8 +1,8 @@
 #include <iostream>
 
-#include "addition.h"
-#include "division.h"
-#include "print_result.h"
+#include "addition.hpp"
+#include "division.hpp"
+#include "print_result.hpp"
 
 main(){
 
