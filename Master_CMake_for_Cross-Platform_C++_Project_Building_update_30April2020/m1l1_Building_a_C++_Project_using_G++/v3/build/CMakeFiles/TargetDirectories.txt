@@ -1,2 +1,0 @@
-/home/joel/Documents/CS_Study_Notes/Master_CMake_for_Cross-Platform_C++_Project_Building_update_30April2020/m1l1_Building_a_C++_Project_using_G++/v3/build/CMakeFiles/rebuild_cache.dir
-/home/joel/Documents/CS_Study_Notes/Master_CMake_for_Cross-Platform_C++_Project_Building_update_30April2020/m1l1_Building_a_C++_Project_using_G++/v3/build/CMakeFiles/edit_cache.dir
