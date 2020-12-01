@@ -6,6 +6,7 @@ add_subdirectory(math)
 
 add_subdirectory(printing)
 
+
     #These commands are necessary to make the header files for the library targets in the subdirectories available for the main.cpp file to find during compilation.
     #You can use multiples of these same commands on the same target to set different properties of the target.
     #The general syntax is: command(targetName targetProperty commandArgument)
