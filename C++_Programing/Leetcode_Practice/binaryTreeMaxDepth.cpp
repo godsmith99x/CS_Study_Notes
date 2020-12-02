@@ -1,6 +1,7 @@
 #include <iostream>
 #include <algorithm>
 
+//struct provided by Leetcode
 struct TreeNode 
 {
     int val;
@@ -16,6 +17,7 @@ int maxDepth(TreeNode *root);
 
 int main()
 {
+    //builds a tree to test on
     TreeNode *root = new TreeNode(1);
     root->left = new TreeNode(2);
     root->right = new TreeNode(3);
@@ -25,6 +27,7 @@ int main()
     root->right->right->left = new TreeNode(8);
     root->right->left->right = new TreeNode(7);
 
+                                            //function call to get max depth
     std::cout << "The maximum depth is: " << maxDepth(root) << std::endl;
 
     return 0;
@@ -37,15 +40,22 @@ int main()
 
 int maxDepth(TreeNode *root) 
 {
-    // Root being null means tree doesn't exist.
+    // Root being null means node doesn't exist.
     if (root == NULL)
+    {
         return 0;
-    
-    // Get the depth of the left and right subtree using recursion.
-    int leftDepth = maxDepth(root->left);
-    int rightDepth = maxDepth(root->right);
+    } else
+    {
+        // Get the depth of the left and right subtree using recursion.
+                                //dereferences the left pointer to retrieve its value and assign it to maxDepth() as root
+        int leftDepth = maxDepth(root->left);
+                                //does the same on the right side of any node
+        int rightDepth = maxDepth(root->right);
 
-    // Choose the larger one and add the root to it.
-    return std::max(leftDepth, rightDepth) + 1;      
+        // looks at the left and right branch, sees which is larger, adds one to increment
+        //when you get to the bottom of the branch, the node will point to NULL, returning 0, so you will get 0 + 1 and the recursion will unwind
+        return std::max(leftDepth, rightDepth) + 1;
+    }
+          
 }
 
