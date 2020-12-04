@@ -40,6 +40,7 @@ public:
         
         int randomNode = distribution(seeded_eng);
         
+        //investigate way to do this using pointer arithmetic so you don't have to traverse list
         while(--randomNode > 0)
         {
             head = head -> next;
