@@ -32,4 +32,5 @@
 #save all staged changes in tracked files to the branch you are currently working on
 	git commit -m "EXAMPLE OF A COMMIT MESSAGE"
 
-
+#show history of commits
+	git log
