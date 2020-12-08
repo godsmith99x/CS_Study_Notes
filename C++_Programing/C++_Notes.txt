@@ -447,7 +447,7 @@ hogwarts sorting hat quiz
 	cout << "Q4) Which road tempts you the most? " << endl;
 	cout << endl; 
 	cout << "  1) The wide, sunny, grassy lane" << endl;
-	cout << "  2) The narrow, dark, latern-lit alley" << endl;
+	cout << "  2) The narrow, dark, lantern-lit alley" << endl;
 	cout << "  3) The twisting, leaf-strewn path through woods" << endl;
 	cout << "  4) The cobbled street lined (ancient buildings)" << endl;
 
@@ -550,3 +550,63 @@ for loop - WhaleSpeak Quiz
 	}
 	cout << endl;
 	}
+
+
+//declaring a class
+
+	class ClassName
+	{
+		//declarations;	
+	};
+
+//member of pointer operator
+//	->
+//	used to dereference and access value of pointer
+
+
+//Class methods are usually declared in .hpp header files, using the following syntax
+	returnType ClassName::methodName(argType argName)
+	{
+		//expressions;
+	}
+
+//smart pointer object example
+	#include <vector>
+	#include <string>
+	#include <memory>
+
+	class Player
+	{
+	private:
+	std::string name;
+	int health;
+	int xp;
+
+	public:
+	void talk(std::string);
+	bool isDead();
+	};
+
+
+
+	int main() 
+	{
+	//creates a frank and a hero object on the stack
+	Player frank;
+	Player hero;
+
+	//creates a vector of player objects called players
+	std::vector<Player> players {frank};
+
+	players.push_back(hero);
+
+	//uses a smart pointer to dynamically allocate an enemy object on the heap
+	std::unique_ptr<Player> enemy {new Player};
+
+	enemy -> talk("Fuck you!");
+
+	
+	return 0;
+	}
+
+//Class methods are usually implemented in their own .cpp file and #include the header file where they were declared
