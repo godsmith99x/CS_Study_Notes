@@ -22,5 +22,7 @@ public:
   ~Profile();
 
   //method declarations
-  std::string mViewProfile();
+  std::string viewProfile();
+
+  void addHobby(std::string newHobby);
 };

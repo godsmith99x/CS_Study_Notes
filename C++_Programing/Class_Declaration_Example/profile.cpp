@@ -1,4 +1,5 @@
 #include <string>
+#include <vector>
 #include "profile.hpp"
 
 //constructor definition
@@ -16,7 +17,24 @@ Profile::~Profile()
 {}
 
 //method definitions
-std::string Profile::mViewProfile()
+std::string Profile::viewProfile()
 {
-  return "Name: " + name + "\n" + "Age: " + std::to_string(age) + "\n" + "City: " + city + "\n" + "Country: " + country + "\n" + "Pronouns: " + pronouns + "\n";
+  std::string nameString {"Name: " + name + "\n"};
+  std::string ageString {"Age: " + std::to_string(age) + "\n"};
+  std::string cityString {"City: " + city + "\n"};
+  std::string countryString {"Country: " + country + "\n"};
+  std::string pronounsString {"Pronouns: " + pronouns + "\n"};
+  std::string hobbiesString {"Hobbies: "};
+
+  for(auto i : hobbies)
+    {
+      hobbiesString += i + ", ";
+    }
+
+  return  nameString +  ageString +  cityString +  countryString + pronounsString + hobbiesString + "[end of profile]\n";
+}
+
+void Profile::addHobby(std::string newHobby)
+{
+  hobbies.push_back(newHobby);
 }
