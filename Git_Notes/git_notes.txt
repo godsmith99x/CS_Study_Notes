@@ -34,3 +34,9 @@
 
 #show history of commits
 	git log
+
+#list all the files that have been committed 
+	git ls-files
+
+#express commit all changed files in a repo
+	git commit -am "Commit Message"
