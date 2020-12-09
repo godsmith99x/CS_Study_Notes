@@ -54,3 +54,24 @@
 #--global means its at the user level, not the repo level, ex:
 	git config --global alias.hist "log --oneline --graph --decorate --all"
 	git hist
+	git hist -- fileName
+
+#rename files committed to repo
+	git mv oldFile.name newFile.name
+	git commit -m "EXAMPLE OF A COMMIT MESSAGE"
+
+#remove file from repo with git
+	git rm file.Name
+	git commit -m "Deleting file.Name from repo"
+
+#update git after renaming, adding, or removing files on the filesystem
+	git add -u
+	git commit -m "Deleted myfile.txt"
+
+#update git after any operation on all files on the filesystem
+	git add -A 
+	git commit -m "Added myfile.txt and renamed LICENSE.md to LICENSE.txt"
+
+#ignore certain files in adding a .gitignore file to the repo
+	git add .gitignore
+	git commit -m "Added .gitignore file"
