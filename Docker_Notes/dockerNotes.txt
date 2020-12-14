@@ -1,0 +1,5 @@
+#starts the containers in the background and leaves them running, -d means detached
+    docker-compose up -d
+
+#starts a bash shell in an already running container named DockerImageName, -i means interactive, which keeps STDIN open even if not attached,  and -t means allocate a pseudo-TTY 
+    docker exec -it DockerImageName bash
