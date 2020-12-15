@@ -1,0 +1,8 @@
+start tag content end tag
+<h1>Hello World</h1>
+
+self-closing tags
+<br>
+
+self-closing tag with HTML attribute
+<hr size="3">
