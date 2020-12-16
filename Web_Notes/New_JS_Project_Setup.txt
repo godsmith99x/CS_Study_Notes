@@ -1,0 +1,31 @@
+commands to run when starting a new JS project
+
+    npm init -y
+    npm install -D eslint eslint-config-prettier eslint-plugin-prettier prettier --save-exact
+
+config file for eslint
+    touch .eslintrc
+
+    add the following to the file
+        {
+            "extends": [
+                "plugin:prettier/recommended"
+            ],
+
+            "plugins": ["prettier"],
+
+            "rules": {
+                "prettier/prettier": "error"
+            }
+        }
+        
+config file for prettier
+    touch .prettierrc
+
+    add the following to the file
+        {
+            "semi": true,
+            "singleQuote": true,
+            "tabWidth": 2,
+            "useTabs": false
+        }
