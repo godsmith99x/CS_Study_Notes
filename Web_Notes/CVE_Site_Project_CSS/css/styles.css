@@ -1,0 +1,44 @@
+body {
+	background-color: #70af85;
+}
+
+h1 {
+	font-family: "Share Tech", sans-serif;
+	color: #f0e2d0;
+	font-size: 75px;
+}
+
+h3 {
+	font-family: "Share Tech", sans-serif;
+	color: #f0e2d0;
+	font-size: 35px;
+}
+
+p {
+	color: #f0e2d0;
+	font-family: "Open Sans", sans-serif;
+	font-size: 20px;
+}
+
+table {
+	color: #f0e2d0;
+	font-family: "Open Sans", sans-serif;
+}
+
+ol {
+	color: #f0e2d0;
+	font-family: "Open Sans", sans-serif;
+}
+
+ul {
+	color: #f0e2d0;
+	font-family: "Open Sans", sans-serif;
+}
+
+hr {
+	border-style: none;
+	border-top-style: solid;
+	border-color: #aa8976;
+	border-width: 5px;
+	width: 75%;
+}
