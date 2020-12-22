@@ -63,12 +63,174 @@ Good luck!
 
 */
 #include <iostream>
+#include <vector>
+#include <algorithm> // for binary search
+#include <numeric>   // for accumulate
 
 using namespace std;
 
-int main() {
-    
-    cout << "Hello world" << endl;
+void displayMenu();
+void enterChoice(const vector<char> acceptableChoices, char &currentChoice);
+void printNumbers(vector<int> numbers);
+void addNumber(vector<int> &numbers);
+void displayMean(vector<int> numbers);
+void displayMin(vector<int> numbers);
+void displayMax(vector<int> numbers);
+bool quitProgram(bool &quit);
+
+int main()
+{
+
+    const vector<char> acceptableChoices{'A', 'L', 'M', 'P', 'Q', 'S', 'a', 'l', 'm', 'p', 'q', 's'};
+    vector<int> numbers{};
+    char currentChoice{};
+    bool quit = false;
+
+    while (!quit)
+    {
+
+        displayMenu();
+        enterChoice(acceptableChoices, currentChoice);
+
+        switch (currentChoice)
+        {
+        case 'P':
+        case 'p':
+            printNumbers(numbers);
+            break;
+        case 'A':
+        case 'a':
+            addNumber(numbers);
+            break;
+        case 'M':
+        case 'm':
+            displayMean(numbers);
+            break;
+        case 'S':
+        case 's':
+            displayMin(numbers);
+            break;
+        case 'L':
+        case 'l':
+            displayMax(numbers);
+            break;
+        case 'Q':
+        case 'q':
+            quitProgram(quit);
+            break;
+        default:
+            cout << "Error" << endl;
+        }
+    }
+
     return 0;
 }
 
+void displayMenu()
+{
+    cout << "P - Print numbers" << endl;
+    cout << "A - Add a number" << endl;
+    cout << "M - Display mean of the numbers" << endl;
+    cout << "S - Display the smallest number" << endl;
+    cout << "L - Display the largest number" << endl;
+    cout << "Q - Quit" << endl;
+}
+
+void enterChoice(const vector<char> acceptableChoices, char &currentChoice)
+{
+    char choice{};
+
+    cout << "\nEnter your choice: ";
+    cin >> choice;
+
+    if (binary_search(acceptableChoices.begin(), acceptableChoices.end(), choice))
+    {
+        cout << endl;
+        currentChoice = choice;
+    }
+    else
+    {
+        cout << "Invalid choice. Please enter a valid choice." << endl;
+        enterChoice(acceptableChoices, currentChoice);
+    }
+}
+
+void printNumbers(vector<int> numbers)
+{
+    cout << "The current numbers entered are: [";
+    for (auto i : numbers)
+    {
+        cout << i << " ";
+    }
+    cout << "]\n";
+}
+
+void addNumber(vector<int> &numbers)
+{
+
+    while (true)
+    {
+        int number{};
+        cout << "Add an integer to the list: ";
+
+        if (cin >> number)
+        {
+            cout << "You entered: " << number << endl;
+            numbers.push_back(number);
+            break;
+        }
+        else
+        {
+            cout << "Please enter a valid integer" << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        }
+    }
+}
+
+void displayMean(vector<int> numbers)
+{
+    if (numbers.size() == 0)
+    {
+        cout << "Unable to calculate the mean - no data" << endl;
+    }
+    else
+    {
+        float mean = (accumulate(numbers.begin(), numbers.end(), 0)) / (numbers.size());
+        cout << "The mean is: " << mean << endl;
+    }
+}
+
+void displayMin(vector<int> numbers)
+{
+    if (numbers.size() == 0)
+    {
+        cout << "Unable to determine the smallest number - list is empty" << endl;
+    }
+    else
+    {
+
+        vector<int>::iterator result = min_element(numbers.begin(), numbers.end());
+        int min = numbers.at(distance(numbers.begin(), result));
+        cout << "The smallest number is: " << min << endl;
+    }
+}
+
+void displayMax(vector<int> numbers)
+{
+    if (numbers.size() == 0)
+    {
+        cout << "Unable to determine the largest number - list is empty" << endl;
+    }
+    else
+    {
+        vector<int>::iterator result = max_element(numbers.begin(), numbers.end());
+        int max = numbers.at(distance(numbers.begin(), result));
+        cout << "The largest number is: " << max << endl;
+    }
+}
+
+bool quitProgram(bool &quit)
+{
+    return quit = true;
+}
