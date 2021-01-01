@@ -1,12 +1,9 @@
 #include <iostream>
-
-void Log(const char* message)
-{
-    std::cout << message << std::endl;
-}
+#include "include/log.hpp"
 
 int main()
 {
-    std::cout << "Hello World!" << std::endl;
+    initLog();
+    log("Hello World!");
     std::cin.get();
 }
