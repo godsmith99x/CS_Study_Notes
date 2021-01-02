@@ -18,7 +18,7 @@ public:
         m_LogLevel = level;
     }
 
-    void Error(const char* message)
+    void Error(const char* message) const
     {
         if (m_LogLevel >= LogLevelError)
         {
@@ -26,7 +26,7 @@ public:
         }
     }
 
-    void Warn(const char* message)
+    void Warn(const char* message) const
     {
         if (m_LogLevel >= LogLevelWarning)
         {
@@ -34,7 +34,7 @@ public:
         }
     }
 
-    void Info(const char* message)
+    void Info(const char* message) const
     {
         if (m_LogLevel >= LogLevelInfo)
         {
@@ -47,7 +47,7 @@ public:
 int main()
 {
     Log log;
-    log.SetLevel(log.LogLevelWarning);
+    log.SetLevel(log.LogLevelError);
     log.Warn("Hello");
     log.Error("Hello");
     log.Info("Hello");
