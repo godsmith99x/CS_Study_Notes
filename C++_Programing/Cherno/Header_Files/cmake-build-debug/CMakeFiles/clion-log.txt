@@ -1,0 +1,18 @@
+/snap/clion/138/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/joel/Documents/CS_Study_Notes/C++_Programing/Cherno/Header_Files
+-- The CXX compiler identification is GNU 9.3.0
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ - works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+CMake Error at CMakeLists.txt:10 (add_subdirectory):
+  The source directory
+
+    /home/joel/Documents/CS_Study_Notes/C++_Programing/Cherno/Header_Files/include
+
+  does not contain a CMakeLists.txt file.
+
+
+-- Configuring incomplete, errors occurred!
+See also "/home/joel/Documents/CS_Study_Notes/C++_Programing/Cherno/Header_Files/cmake-build-debug/CMakeFiles/CMakeOutput.log".
