@@ -1,5 +1,5 @@
 #include <iostream>
-#include "include/log.hpp"
+#include "log.hpp"
 
 void initLog()
 {
