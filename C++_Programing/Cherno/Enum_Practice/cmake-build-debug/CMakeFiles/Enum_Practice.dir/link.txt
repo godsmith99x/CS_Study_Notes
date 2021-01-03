@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/Enum_Practice.dir/main.cpp.o  -o Enum_Practice 
