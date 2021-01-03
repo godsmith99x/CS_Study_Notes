@@ -82,6 +82,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/joel/Documents/CS_Study_Notes/C++_Programing/Cherno/Static_Example/Static.cpp">
+			<Option target="Static_Example"/>
+		</Unit>
+		<Unit filename="/home/joel/Documents/CS_Study_Notes/C++_Programing/Cherno/Static_Example/Static.hpp">
+			<Option target="Static_Example"/>
+		</Unit>
 		<Unit filename="/home/joel/Documents/CS_Study_Notes/C++_Programing/Cherno/Static_Example/main.cpp">
 			<Option target="Static_Example"/>
 		</Unit>

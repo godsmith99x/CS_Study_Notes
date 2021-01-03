@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/joel/Documents/CS_Study_Notes/C++_Programing/Cherno/Static_Example/Static.cpp" "/home/joel/Documents/CS_Study_Notes/C++_Programing/Cherno/Static_Example/cmake-build-debug/CMakeFiles/Static_Example.dir/Static.cpp.o"
   "/home/joel/Documents/CS_Study_Notes/C++_Programing/Cherno/Static_Example/main.cpp" "/home/joel/Documents/CS_Study_Notes/C++_Programing/Cherno/Static_Example/cmake-build-debug/CMakeFiles/Static_Example.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

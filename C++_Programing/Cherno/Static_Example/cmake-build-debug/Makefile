@@ -143,6 +143,33 @@ Static_Example/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Static_Example.dir/build.make CMakeFiles/Static_Example.dir/build
 .PHONY : Static_Example/fast
 
+Static.o: Static.cpp.o
+
+.PHONY : Static.o
+
+# target to build an object file
+Static.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Static_Example.dir/build.make CMakeFiles/Static_Example.dir/Static.cpp.o
+.PHONY : Static.cpp.o
+
+Static.i: Static.cpp.i
+
+.PHONY : Static.i
+
+# target to preprocess a source file
+Static.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Static_Example.dir/build.make CMakeFiles/Static_Example.dir/Static.cpp.i
+.PHONY : Static.cpp.i
+
+Static.s: Static.cpp.s
+
+.PHONY : Static.s
+
+# target to generate assembly for a file
+Static.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Static_Example.dir/build.make CMakeFiles/Static_Example.dir/Static.cpp.s
+.PHONY : Static.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -179,6 +206,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Static_Example"
+	@echo "... Static.o"
+	@echo "... Static.i"
+	@echo "... Static.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

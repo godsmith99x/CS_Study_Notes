@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Static_Example.dir/Static.cpp.o"
   "CMakeFiles/Static_Example.dir/main.cpp.o"
   "Static_Example"
   "Static_Example.pdb"
