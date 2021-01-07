@@ -1,27 +1,38 @@
 #include <iostream>
+#include <vector>
 
-class Entity
-{
-public:
-  float X, Y;
-
-  Entity()
-  {
-      X = 0.0f;
-      Y = 0.0f;
-  }
-
-  void Print()
-  {
-    std::cout << X << ", " << Y << std::endl;
-  }
-};
+int findMaxConsecutiveOnes(std::vector<int> &nums);
 
 int main()
 {
 
-  Entity e;
-  std::cout << e.X << std::endl;
-  e.Print();
+  std::vector<int> nums{1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1};
+
+  findMaxConsecutiveOnes(nums);
+
   std::cin.get();
+}
+
+int findMaxConsecutiveOnes(std::vector<int> &nums)
+{
+  int max{};
+  int count{};
+  for (auto i : nums)
+  {
+    if (1 == i)
+    {
+      count++;
+      if (count > max)
+      {
+        max = count;
+      }
+    }
+    else
+    {
+      count = 0;
+    }
+  }
+
+  // std::cout << "Max is " << max << std::endl;
+  return max;
 }
