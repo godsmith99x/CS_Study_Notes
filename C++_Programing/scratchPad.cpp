@@ -1,38 +1,17 @@
 #include <iostream>
 #include <vector>
 
-int findMaxConsecutiveOnes(std::vector<int> &nums);
+std::vector<int> Count_Down(int n);
 
 int main()
 {
 
-  std::vector<int> nums{1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1};
-
-  findMaxConsecutiveOnes(nums);
-
-  std::cin.get();
+  Count_Down(10);
 }
 
-int findMaxConsecutiveOnes(std::vector<int> &nums)
+std::vector<int> Count_Down(int n)
 {
-  int max{};
-  int count{};
-  for (auto i : nums)
-  {
-    if (1 == i)
-    {
-      count++;
-      if (count > max)
-      {
-        max = count;
-      }
-    }
-    else
-    {
-      count = 0;
-    }
-  }
+  std::vector<int> Counter{};
 
-  // std::cout << "Max is " << max << std::endl;
-  return max;
+  return (n < 1) ? Counter.push_back(0) : Count_Down(n - 1);
 }
