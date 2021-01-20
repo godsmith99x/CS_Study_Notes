@@ -20,12 +20,25 @@ int main()
 }
 
 
+//Naive answer
 std::vector<int> runningSum(std::vector<int>& nums)
+{
+    std::vector<int> output;
+    output.push_back(nums[0]);
+    for (int i = 1; i < nums.size(); i++)
+    {
+        output.push_back(nums[i] + output[i-1]);
+    }
+    return output;
+}
+
+//Standard library algorithm answer
+/*std::vector<int> runningSum(std::vector<int>& nums)
 {
     std::vector<int> v (nums.size());
     std::partial_sum(nums.begin(), nums.end(), v.begin());
     return v;
-}
+}*/
 
 void print(std::vector <int> const &a)
 {
