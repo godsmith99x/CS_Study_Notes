@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/joel/Documents/CS_Study_Notes/C++_Programing/Leetcode_Practice/Running_Sum/main.cpp
+iostream
+-
+vector
+-
+numeric
+-
+
