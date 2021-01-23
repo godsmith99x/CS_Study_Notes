@@ -26,6 +26,7 @@ console.log(friendNameLengths);
 // 4. Create a new constant named shorterNamedFriends,
 // which will be a list of the friends except the friend with the longest name.
 
+
 // 5. Print each variable to the console.
 
 // Solution can be seen at:
