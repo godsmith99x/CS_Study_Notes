@@ -3,8 +3,8 @@
 
 int main()
 {
-    std::string word {"broccoli"};
-    std::string text {"Fuck that fucking broccoli-ass broccoli!"};
+    std::string word {"fart-nugget"};
+    std::string text {"Poo poo caca fart-nugget!"};
 
     Bleep(text, word);
 
