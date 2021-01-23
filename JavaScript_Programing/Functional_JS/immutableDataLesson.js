@@ -5,6 +5,7 @@ const meal = {
 // meal called calories setting it's value to 200,
 // then log the result to the console
 
+// Having ... on the right side of the = means it is used as the spread operator
 const updatedMeal = {
 	...meal,
 	calories: 200
@@ -16,6 +17,7 @@ console.log(updatedMeal);
 // 2. In an Immutable way, increase the calories
 // by 100 and print the result to the console
 
+// Having ... on the right side of the = means it is used as the spread operator
 const updatedMeal2 = {
 	...updatedMeal,
 	calories: 100
@@ -26,6 +28,7 @@ console.log(updatedMeal2);
 
 // 3. In an Immutable way, remove the calories property and log the result to the console
 
+// Having ... on the left side of the = means it is used as rest syntax
 const {calories, ...updatedMeal3} = updatedMeal2;
 
 console.log(updatedMeal3);
