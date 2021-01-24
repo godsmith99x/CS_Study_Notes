@@ -19,13 +19,19 @@ console.log(updatedFriends);
 
 //mapped over updatedFriends array and used unnamed function to find length of each string
 const friendNameLengths = updatedFriends.map(function (str) {
-	return str.length
+	return str.length;
 });
 console.log(friendNameLengths);
 
 // 4. Create a new constant named shorterNamedFriends,
 // which will be a list of the friends except the friend with the longest name.
 
+const shortNamedFriends = updatedFriends.filter(function (str) {
+	const maxNameLength = Math.max(...friendNameLengths);
+	return str.length < maxNameLength;
+});
+
+console.log(shortNamedFriends);
 
 // 5. Print each variable to the console.
 
