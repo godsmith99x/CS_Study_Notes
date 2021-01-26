@@ -1,0 +1,1 @@
+/usr/bin/g++-10  -g   CMakeFiles/Move_Semantics.dir/main.cpp.o  -o Move_Semantics 
