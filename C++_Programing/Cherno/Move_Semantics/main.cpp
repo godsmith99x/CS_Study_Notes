@@ -29,6 +29,15 @@ public:
         delete m_Data;
     }
 
+    void Print()
+    {
+        for (uint32_t i = 0; i < m_Size; ++i)
+        {
+            printf("%c", m_Data[i]);
+        }
+        printf("\n");
+    }
+
 private:
     char* m_Data;
     uint32_t m_Size;
@@ -44,6 +53,11 @@ public:
 
     }
 
+    void PrintName()
+    {
+        m_Name.Print();
+    }
+
 private:
     String m_Name;
 };
@@ -52,6 +66,7 @@ private:
 int main()
 {
     Entity entity(String("Joel"));
+    entity.PrintName();
 
     std::cin.get();
     return 0;
