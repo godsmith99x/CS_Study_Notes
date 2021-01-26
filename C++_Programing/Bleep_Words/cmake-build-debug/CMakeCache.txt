@@ -14,6 +14,12 @@
 # EXTERNAL cache entries
 ########################
 
+//Value Computed by CMake
+Bleep_Words_BINARY_DIR:STATIC=/home/joel/Documents/CS_Study_Notes/C++_Programing/Bleep_Words/cmake-build-debug
+
+//Value Computed by CMake
+Bleep_Words_SOURCE_DIR:STATIC=/home/joel/Documents/CS_Study_Notes/C++_Programing/Bleep_Words
+
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=/usr/bin/addr2line
 
@@ -156,7 +162,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=Temp
+CMAKE_PROJECT_NAME:STATIC=Bleep_Words
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib

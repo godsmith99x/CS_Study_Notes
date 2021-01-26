@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/joel/Documents/CS_Study_Notes/C++_Programing/Bleep_Words/Bleep_Functions.cpp
+Bleep_Functions.hpp
+/home/joel/Documents/CS_Study_Notes/C++_Programing/Bleep_Words/Bleep_Functions.hpp
+
+/home/joel/Documents/CS_Study_Notes/C++_Programing/Bleep_Words/Bleep_Functions.hpp
+string
+-
+vector
+-
+
+/home/joel/Documents/CS_Study_Notes/C++_Programing/Bleep_Words/main.cpp
+iostream
+-
+Bleep_Functions.hpp
+/home/joel/Documents/CS_Study_Notes/C++_Programing/Bleep_Words/Bleep_Functions.hpp
+
