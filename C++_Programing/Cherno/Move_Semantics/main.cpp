@@ -35,17 +35,25 @@ public:
         memcpy(m_Data, other.m_Data, m_Size);
     }
 
-    //4. Destructor
+    //4. Move constructor. Similar to Copy constructor, but it uses an rvalue reference (&&) to take name in as a
+    // temporary value rather than creating a copy and then deleting it.
+    String(const String &&other) noexcept
+    {
+
+    }
+
+    //5. Destructor
     ~String()
     {
-        //4.a Deletes this instance's data from the heap.
+        //5.a Deletes this instance's data from the heap.
+        printf("Deleted!\n");
         delete m_Data;
     }
 
-    //5. Public method to print the string.
+    //6. Public method to print the string.
     void Print()
     {
-        //5.a Loop through each uint32_t sized index in the array.
+        //6.a Loop through each uint32_t sized index in the array.
         for (uint32_t i = 0; i < m_Size; ++i)
         {
             //5.b printf() the character at that index in the array.
@@ -55,7 +63,7 @@ public:
     }
 
 private:
-    //6. Private variables to store a pointer to the data and the size of the array.
+    //7. Private variables to store a pointer to the data and the size of the array.
     char* m_Data{};
     uint32_t m_Size{};
 };
@@ -65,6 +73,12 @@ class Entity
 {
 public:
     explicit Entity(const String &name)
+            : m_Name(name)
+    {
+
+    }
+
+    explicit Entity(const String &&name)
             : m_Name(name)
     {
 
@@ -82,8 +96,8 @@ private:
 
 int main()
 {
-    //The explicit cast to String was done for clarity and teaching. The cast to from String to Entity would be
-    // implied by the compiler if String were omitted.
+    //Create a Entity named Joel. If we don't have a String constructor with move semantics, it will create a String
+    // "Joel" and then copy its data into Entity "Joel", which is an necessary copy.
     Entity entity(String("Joel"));
     entity.PrintName();
 
