@@ -1,0 +1,7 @@
+peaches
+pear
+grapes
+apples
+pineapple
+kiwi
+cherries
