@@ -610,3 +610,29 @@ for loop - WhaleSpeak Quiz
 	}
 
 //Class methods are usually implemented in their own .cpp file and #include the header file where they were declared
+
+Character Functions
+	use <cctype> header
+	test characters
+	convert character case
+	etc
+	
+C-style Strings
+	use <cstring> header
+	copy
+	concat
+	compare
+	search
+	ect
+	
+C++ Strings
+	ex of initialization
+	
+	#include <string>
+	
+	std::string s1;			//empty
+	std::string s2 {"Frank"};	//Frank
+	std::string s3 {s2};		//Frank
+	std::string s4 {"Frank", 3};	//Fra
+	std::string s5 {s3, 0, 2};	//Fr
+	std::string s6 (3, 'X');	//XXX
