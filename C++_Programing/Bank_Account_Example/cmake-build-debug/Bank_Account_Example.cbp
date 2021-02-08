@@ -82,6 +82,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/joel/Documents/CS_Study_Notes/C++_Programing/Bank_Account_Example/Account.cpp">
+			<Option target="Bank_Account_Example"/>
+		</Unit>
+		<Unit filename="/home/joel/Documents/CS_Study_Notes/C++_Programing/Bank_Account_Example/Account.hpp">
+			<Option target="Bank_Account_Example"/>
+		</Unit>
 		<Unit filename="/home/joel/Documents/CS_Study_Notes/C++_Programing/Bank_Account_Example/main.cpp">
 			<Option target="Bank_Account_Example"/>
 		</Unit>

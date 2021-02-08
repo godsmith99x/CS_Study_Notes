@@ -1,1 +1,1 @@
-/usr/bin/g++-10  -g   CMakeFiles/Bank_Account_Example.dir/main.cpp.o  -o Bank_Account_Example 
+/usr/bin/g++-10  -g   CMakeFiles/Bank_Account_Example.dir/main.cpp.o CMakeFiles/Bank_Account_Example.dir/Account.cpp.o  -o Bank_Account_Example 
